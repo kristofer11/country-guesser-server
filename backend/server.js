@@ -1,10 +1,23 @@
-// const app = require('express')();
-// require('dotenv').config();
+const express = require('express');
+const dotenv = require('dotenv').config();
+const { errorHandler } = require('./middleware/errorMiddleware')
+const port = process.env.PORT || 5000;
+
+const app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
+app.use('/api/leaders', require('./routes/leaderRoutes'))
+
+app.use(errorHandler);
+
+app.listen(port, () => console.log(`Server started on port ${port}`));
+
 // const PASSWORD = process.env.PASSWORD;
 
 // const { MongoClient } = require('mongodb');
 
-// const PORT = 8080;
 // const MONGO_URI = `mongodb+srv://telerocker11:${PASSWORD}@leader-board.njbxijb.mongodb.net/?retryWrites=true&w=majority`;
 
 // async function connectToDatabase() {
@@ -28,5 +41,3 @@
 //     PORT,
 //     () => console.log(`Server now running on port ${PORT}`)
 // );
-
-console.log('hello wrld');
