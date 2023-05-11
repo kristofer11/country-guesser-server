@@ -4,6 +4,6 @@ const { getLeaders, updateLeader, setLeader, deleteLeader } = require('../contro
 
 router.route('/').get(getLeaders).post(setLeader);
 
-router.route('/:id').delete(deleteLeader).put(updateLeader)
+router.route('/:id').delete(deleteLeader).put(updateLeader);
 
 module.exports = router;
