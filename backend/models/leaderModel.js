@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const leaderSchema = mongoose.Schema({
     name: {
         type: String,
+        maxlength: 3,
         required: [true, 'Please add your initials']
     },
     streak: {
@@ -11,7 +12,7 @@ const leaderSchema = mongoose.Schema({
     },
     message: {
         type: String,
-        required: true
+        maxlength: 100,
     }
 }, {
     timestamps: true
