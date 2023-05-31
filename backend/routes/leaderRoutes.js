@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { getLeaders, updateLeader, setLeader, deleteLeader } = require('../controllers/leaderController');
 
-router.route('/').get(getLeaders).post(setLeader);
+const protect = require('../middleware/authMiddleware');
 
-router.route('/:id').delete(deleteLeader).put(updateLeader);
+router.route('/').get(protect, getLeaders).post(protect, setLeader);
+
+router.route('/:id').delete(protect, deleteLeader).put(protect, updateLeader);
 
 module.exports = router;
