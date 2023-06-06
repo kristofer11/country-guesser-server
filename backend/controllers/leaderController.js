@@ -17,7 +17,15 @@ const getLeaders = asyncHandler(async (req, res) => {
 const setLeader = asyncHandler(async (req, res) => {
     if(!req.body.name) {
         res.status(400)
-        throw new Error('Please enter text')
+        throw new Error('Please enter three letter initials.')
+    }
+    if(!req.body.streak) {
+        res.status(400)
+        throw new Error('Please enter a streak.')
+    }
+    if (!req.body.message) {
+        res.status(400)
+        throw new Error('Please enter a brief message.')
     }
 
     const leader = await Leader.create({
