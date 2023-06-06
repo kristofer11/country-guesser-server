@@ -16,16 +16,16 @@ const getLeaders = asyncHandler(async (req, res) => {
 //@access   Public
 const setLeader = asyncHandler(async (req, res) => {
     const { name, streak, message } = req.body;
-    
-    if(!req.body.name) {
+
+    if(!name || name.length !== 3) {
         res.status(400)
         throw new Error('Please enter three letter initials.')
     }
-    if(!req.body.streak) {
+    if(!streak) {
         res.status(400)
         throw new Error('Please enter a streak.')
     }
-    if (!req.body.message) {
+    if (!message) {
         res.status(400)
         throw new Error('Please enter a brief message.')
     }
