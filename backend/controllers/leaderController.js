@@ -36,7 +36,7 @@ const setLeader = asyncHandler(async (req, res) => {
         message: req.body.message
     });
 
-    res.status(200).json({message: 'set leader'})
+    res.status(200).json({message: 'Your streak has been added!'})
 })
 
 //@desc     Update leader
