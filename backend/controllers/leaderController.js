@@ -15,6 +15,8 @@ const getLeaders = asyncHandler(async (req, res) => {
 //@route    POST /api/leader
 //@access   Public
 const setLeader = asyncHandler(async (req, res) => {
+    const { name, streak, message } = req.body;
+    
     if(!req.body.name) {
         res.status(400)
         throw new Error('Please enter three letter initials.')
