@@ -4,25 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
-    "client": "npm start --prefix frontend"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristofer11/country-guesser-server.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-async-handler": "^1.2.0",
-    "jsonwebtoken": "^9.0.0",
-    "mongodb": "^5.3.0",
-    "mongoose": "^7.1.1"
+  "bugs": {
+    "url": "https://github.com/kristofer11/country-guesser-server/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
+  "homepage": "https://github.com/kristofer11/country-guesser-server#readme",
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
