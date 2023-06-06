@@ -1,9 +1,19 @@
 const express = require('express');
+const dotenv = require('dotenv').config;
+const {errorHandler} = require('./middleware/errorMiddleware');
+// const mongoose = require('mongoose');
+const port = process.env.PORT || 8000;
+
 const app = express();
 
-app.get('/api/leaders', (req, res) => {
-    res.json({message: 'Hello from the backend!'})
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
 
-const port = 3000;
-app.listen(port, () => console.log(`Listening on port ${port}`));
+// Connect to MongoDB
+const dbURI = 'mongodb://localhost:27017/leaders';
+
+app.use('/api/leaders', require('./routes/leaderRoutes'));
+
+app.use(errorHandler);
+
+app.listen(port, () => console.log(`Listening on port ${port}`)); 
