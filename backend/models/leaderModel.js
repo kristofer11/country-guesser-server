@@ -5,7 +5,7 @@ const leaderSchema = mongoose.Schema(
         name: {
             type: String,
             required: [true, 'Please add your name (3 letters max)'],
-            maxlength: [3, 'Name cannot be more than 3 characters'],
+            maxlength: [8, 'Name cannot be more than 3 characters'],
         },
         streak: {
             type: Number,
