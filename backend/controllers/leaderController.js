@@ -25,10 +25,7 @@ const setLeader = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Please enter a streak.')
     }
-    if (!message) {
-        res.status(400)
-        throw new Error('Please enter a brief message.')
-    }
+
 
     const leader = await Leader.create({
         name: req.body.name,
