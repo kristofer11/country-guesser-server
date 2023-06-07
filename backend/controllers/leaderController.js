@@ -17,7 +17,7 @@ const getLeaders = asyncHandler(async (req, res) => {
 const setLeader = asyncHandler(async (req, res) => {
     const { name, streak, message } = req.body;
 
-    if(!name || name.length !== 3) {
+    if(!name) {
         res.status(400)
         throw new Error('Please enter three letter initials.')
     }
