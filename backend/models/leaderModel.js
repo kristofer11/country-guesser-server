@@ -16,7 +16,7 @@ const leaderSchema = mongoose.Schema(
             maxlength: [100, 'Message cannot be more than 100 characters'],
         },
     },
-    // {timestamps: true}
+    {timestamps: true}
     )
 
     module.exports = mongoose.model('Leader', leaderSchema);
