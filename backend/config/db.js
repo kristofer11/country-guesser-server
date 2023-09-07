@@ -7,7 +7,6 @@ const connectDB = async () => {
             dbName: 'leaders',
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useCreateIndex: true,
         })
 
         console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
